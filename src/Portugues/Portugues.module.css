@@ -1,0 +1,93 @@
+.quiz_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px; /* Adiciona um pouco de preenchimento */
+}
+
+.titulo_one {
+  font-size: 2.5rem; /* Tamanho padrão para telas maiores */
+  margin-bottom: 50px; /* Reduzi o espaço */
+  font-weight: bold;
+  color: #4352ffbe;
+}
+
+/* Ajuste para telas pequenas (celulares) */
+@media (max-width: 600px) {
+  .titulo_one {
+    font-size: 2rem; /* Tamanho menor para celulares */
+    margin-bottom: 30px; /* Menos espaço embaixo do título */
+  }
+
+  .pergunta {
+    font-size: 1.2rem; /* Tamanho menor da pergunta */
+  }
+
+  .button {
+    font-size: 1rem; /* Tamanho do botão */
+    padding: 10px 20px; /* Aumenta o tamanho do botão */
+  }
+}
+
+/* Ajuste para telas médias (tablets) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .titulo_one {
+    font-size: 2.2rem; /* Tamanho médio para tablets */
+    margin-bottom: 40px; /* Ajusta o espaço */
+  }
+
+  .pergunta {
+    font-size: 1.5rem; /* Tamanho médio da pergunta */
+  }
+
+  .button {
+    font-size: 1.1rem; /* Tamanho do botão */
+    padding: 10px 25px; /* Aumenta o tamanho do botão */
+  }
+}
+
+.pergunta {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.opcoes_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+.opcao:hover {
+  background-color: #ffffff;
+}
+
+.button {
+  background-color: #4352ffbe;
+  color: white;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #2335ffbe;
+}
+
+.mensagem_erro {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}

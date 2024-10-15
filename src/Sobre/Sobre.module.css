@@ -1,0 +1,70 @@
+.container {
+  padding: 20px;
+  max-width: 800px; /* Tamanho máximo para telas grandes */
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Título Principal */
+.title {
+  font-size: 36px; /* Tamanho padrão para telas grandes */
+  margin-bottom: 20px;
+}
+
+/* Subtítulo */
+.subtitle {
+  font-size: 28px; /* Tamanho padrão para telas grandes */
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+/* Parágrafo */
+.paragraph {
+  font-size: 18px; /* Tamanho padrão para telas grandes */
+  line-height: 1.6;
+}
+
+/* Ajustes para telas pequenas (celulares) */
+@media (max-width: 600px) {
+  .title {
+      font-size: 28px; /* Tamanho menor para celulares */
+  }
+
+  .subtitle {
+      font-size: 24px; /* Tamanho menor para celulares */
+  }
+
+  .paragraph {
+      font-size: 16px; /* Tamanho menor para celulares */
+  }
+}
+
+/* Ajustes para telas médias (tablets) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .title {
+      font-size: 32px; /* Tamanho médio para tablets */
+  }
+
+  .subtitle {
+      font-size: 26px; /* Tamanho médio para tablets */
+  }
+
+  .paragraph {
+      font-size: 17px; /* Tamanho médio para tablets */
+  }
+}
+
+/* Ajustes para telas grandes */
+@media (min-width: 901px) {
+  .title {
+      font-size: 36px; /* Tamanho padrão para telas grandes */
+  }
+
+  .subtitle {
+      font-size: 28px; /* Tamanho padrão para telas grandes */
+  }
+
+  .paragraph {
+      font-size: 18px; /* Tamanho padrão para telas grandes */
+  }
+}

@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+.navbar {
+  background-color: #4352ffbe; /* Cor de fundo personalizada */
+  padding: 10px; /* Espaçamento interno */
+  color: red;  
+  display: flex; /* Para organizar os itens em linha */
+  justify-content: space-between; /* Para espaçar o título e os links */
+  align-items: center; /* Alinhamento vertical */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Define o texto do título (Quiz Educacional) como branco */
+.navbar .navbar-brand {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Define o texto dos links "Início" e "Sobre" como branco */
+.navbar .navlink,
+.navbar .linknav {
+  color: white;
+  text-decoration: none; /* Remove o sublinhado dos links */
+  padding: 10px; /* Adiciona espaço ao redor dos links */
+  margin-left: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Adiciona a regra para mudar a cor ao passar o mouse */
+.navbar .navlink:hover,
+.navbar .linknav:hover {
+  color: lightgray; /* Apenas um exemplo, pode ajustar a cor desejada */
+}
+
+/* Ajustes para telas pequenas (celulares) */
+@media (max-width: 600px) {
+  .navbar {
+      flex-direction: column; /* Empilha os itens verticalmente */
+      padding: 20px; /* Aumenta o padding para dispositivos móveis */
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar .navlink,
+  .navbar .linknav {
+      padding: 5px; /* Reduz o padding dos links em telas pequenas */
+  }
+}
+
+/* Ajustes para telas médias (tablets) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .navbar {
+      flex-direction: row; /* Mantém os itens em linha */
+  }
+
+  .navbar .navlink,
+  .navbar .linknav {
+      padding: 8px; /* Ajusta o padding dos links para tablets */
+  }
+}
+
+/* Ajustes para telas grandes */
+@media (min-width: 901px) {
+  .navbar {
+      padding: 10px; /* Padding padrão para telas grandes */
+  }
+
+  .navbar .navlink,
+  .navbar .linknav {
+      padding: 10px; /* Padding padrão para links em telas grandes */
   }
 }

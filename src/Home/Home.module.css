@@ -1,0 +1,166 @@
+/* Tela.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f4f8;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+label {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #4352ffbe;
+}
+
+.nome_titulo {
+  font-weight: bold;
+  color: #4352ffbe;
+  margin-top: 14px;
+}
+
+.paragrafo {
+  font-size: 1.2rem; /* Tamanho do texto do parágrafo */
+  color: #666; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  margin: 0 auto; /* Centraliza o parágrafo horizontalmente */
+  width: 80%; /* Define a largura do parágrafo */
+  line-height: 1.6; /* Ajusta o espaçamento entre linhas */
+}
+
+p {
+  font-size: 1.2rem; /* Tamanho do texto do parágrafo */
+  color: #666; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  margin: 0 auto; /* Centraliza o parágrafo horizontalmente */
+  width: 80%; /* Define a largura do parágrafo */
+  line-height: 1.6; /* Ajusta o espaçamento entre linhas */
+}
+
+.selectBlock {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  display: block;
+  text-align: left;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between; /* Garante que os botões fiquem separados */
+  gap: 20px; /* Espaço entre os botões */
+  margin-top: 20px; /* Adiciona um espaço acima do grupo de botões */
+}
+
+.backButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  background-color: #e91e63; /* Cor de hover para o botão Voltar */
+}
+
+.startButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.startButton:hover {
+  background-color: #e91e63; /* Cor de hover para o botão Começar */
+}
+
+.chooseLink {
+  display: block;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.chooseLink:hover {
+  text-decoration: underline;
+}
