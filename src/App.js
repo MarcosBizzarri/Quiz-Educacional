@@ -17,7 +17,7 @@ function App() {
     <Router>
       <Navbar className='navbar' expand="lg">
         <Container>
-          <Navbar.Brand as={Link} to="/">Quiz Educacional</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/" className='titulo'>Quiz Educacional</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/" className='navlink'>Início</Nav.Link>
             <Nav.Link as={Link} to="/sobre" className='linknav'>Sobre</Nav.Link>
@@ -32,7 +32,7 @@ function App() {
         <Route path="/matematica" element={<Matematica />} />
         <Route path="/historia" element={<Historia />} />
         <Route path="/sobre" element={<Sobre />} />
-        <Route path="/tela" element={<Tela />} /> {/* Nova rota de cadastro */}
+        <Route path="/tela" element={<Tela />} /> 
       </Routes>
     </Router>
   );

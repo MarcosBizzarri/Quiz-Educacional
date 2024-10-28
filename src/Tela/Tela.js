@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './Tela.module.css'; // Certifique-se de criar esse arquivo CSS
+import styles from './Tela.module.css'; 
 
-const Cadastro = () => {
+const Tela = () => {
   useEffect(() => {
     document.title = 'Inicio | Quiz Educacional';
   }, []);
@@ -16,10 +16,8 @@ const Cadastro = () => {
     if (nome && idade) {
       console.log(`Nome: ${nome}, Idade: ${idade}`);
 
-      // Armazena o nome no localStorage
       localStorage.setItem('nomeUsuario', nome);
 
-      // Redireciona para a tela Home
       navigate('/Home');
     } else {
       alert('Por favor, preencha todos os campos.');
@@ -45,16 +43,13 @@ const Cadastro = () => {
 
         <div className={styles.inputBlock}>
           <label htmlFor="idade" className={styles.label}>Idade:</label>
-          <select
+          <input
             id="idade"
             value={idade}
             onChange={(e) => setIdade(e.target.value)}
+            placeholder='Digite sua idade'
             className={styles.select}
-          >
-            <option value="">Selecione a faixa etária</option>
-            <option value="10-12">10 a 12 anos</option>
-            <option value="12-14">12 a 14 anos</option>
-          </select>
+          />
         </div>
 
         <button type="submit" className={styles.submitButton}>Entrar</button>
@@ -63,4 +58,4 @@ const Cadastro = () => {
   );
 };
 
-export default Cadastro;
+export default Tela;

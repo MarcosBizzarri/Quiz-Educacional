@@ -1,89 +1,105 @@
-.quiz_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-  padding: 20px; /* Adiciona um pouco de preenchimento */
+html, body {
+  height: 100%; 
+  margin: 0; 
 }
 
+.quiz_container {
+  text-align: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto; 
+  position: relative; 
+  top: 60px; 
+  background-color: white;
+}
 .titulo_one {
-  font-size: 2.5rem; /* Tamanho padrão para telas maiores */
-  margin-bottom: 50px; /* Reduzi o espaço */
-  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 20px;
   color: #4352ffbe;
 }
 
-/* Ajuste para telas pequenas (celulares) */
-@media (max-width: 600px) {
-  .titulo_one {
-    font-size: 2rem; /* Tamanho menor para celulares */
-    margin-bottom: 30px; /* Menos espaço embaixo do título */
-  }
-
-  .pergunta {
-    font-size: 1.2rem; /* Tamanho menor da pergunta */
-  }
-
-  .button {
-    font-size: 1rem; /* Tamanho do botão */
-    padding: 10px 20px; /* Aumenta o tamanho do botão */
-  }
-}
-
-/* Ajuste para telas médias (tablets) */
-@media (min-width: 601px) and (max-width: 900px) {
-  .titulo_one {
-    font-size: 2.2rem; /* Tamanho médio para tablets */
-    margin-bottom: 40px; /* Ajusta o espaço */
-  }
-
-  .pergunta {
-    font-size: 1.5rem; /* Tamanho médio da pergunta */
-  }
-
-  .button {
-    font-size: 1.1rem; /* Tamanho do botão */
-    padding: 10px 25px; /* Aumenta o tamanho do botão */
-  }
-}
-
 .pergunta {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .opcoes_container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; 
   gap: 10px;
 }
 
 .opcao {
   display: flex;
-  align-items: center;
+  align-items: center; 
   gap: 10px;
   padding: 10px;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
   border-radius: 5px;
-  background-color: #ffffff;
+  cursor: pointer;
   transition: background-color 0.3s;
 }
 
+.progresso_container {
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  height: 20px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.progresso_barra {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+  transition: width 0.3s ease;
+}
+
 .opcao:hover {
-  background-color: #ffffff;
+  background-color: #f0f0f0;
+}
+
+.opcao input[type="radio"] {
+  margin: 0; 
+  width: 20px; 
+  height: 20px;
 }
 
 .button {
-  background-color: #4352ffbe;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff4081;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #e91e63;
+}
+
+.feedback {
+  font-size: 1.5rem;
+  font-weight: bold;
   margin-top: 20px;
 }
 
-button:hover {
-  background-color: #2335ffbe;
+.correta {
+  color: green;
+}
+
+.errada {
+  color: red;
 }
 
 .mensagem_erro {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './Home.module.css'; // Certifique-se de criar esse arquivo CSS
+import styles from './Home.module.css'; 
 
 const Home = () => {
 
@@ -13,11 +13,10 @@ const Home = () => {
 
 
   const [selectedSubject, setSelectedSubject] = useState('portugues');
-  const [nome, setNome] = useState(''); // Adiciona um estado para o nome
+  const [nome, setNome] = useState(''); 
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Recupera o nome do localStorage
     const nomeUsuario = localStorage.getItem('nomeUsuario');
     if (nomeUsuario) {
       setNome(nomeUsuario);
@@ -30,12 +29,10 @@ const Home = () => {
 
   const handleStart = () => {
     console.log(`Iniciando quiz de ${selectedSubject}`);
-    // Redireciona para a rota da matéria selecionada
     navigate(`/${selectedSubject}`);
   };
 
   const handleBack = () => {
-    // Redireciona para a tela de cadastro (Tela.js)
     navigate('/Tela');
   };
 

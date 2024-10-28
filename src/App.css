@@ -1,65 +1,106 @@
 .navbar {
-  background-color: #4352ffbe; /* Cor de fundo personalizada */
-  padding: 10px; /* Espaçamento interno */
+  background-color: #4352ffbe; 
+  padding: 10px; 
   color: red;  
-  display: flex; /* Para organizar os itens em linha */
-  justify-content: space-between; /* Para espaçar o título e os links */
-  align-items: center; /* Alinhamento vertical */
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
 }
 
-/* Define o texto do título (Quiz Educacional) como branco */
 .navbar .navbar-brand {
   color: white;
 }
 
-/* Define o texto dos links "Início" e "Sobre" como branco */
+
+.navbar .links-container {
+  display: flex;
+  align-items: center;  
+}
+
 .navbar .navlink,
 .navbar .linknav {
   color: white;
-  text-decoration: none; /* Remove o sublinhado dos links */
-  padding: 10px; /* Adiciona espaço ao redor dos links */
-  margin-left: 50px;
+  text-decoration: none; 
+  padding: 10px; 
+  margin-left: 2px; 
+ 
 }
 
-/* Adiciona a regra para mudar a cor ao passar o mouse */
 .navbar .navlink:hover,
-.navbar .linknav:hover {
-  color: lightgray; /* Apenas um exemplo, pode ajustar a cor desejada */
+.navbar .linknav:hover,
+.navbar .navbar-brand:hover {
+  color: lightgray; 
 }
 
-/* Ajustes para telas pequenas (celulares) */
+
 @media (max-width: 600px) {
   .navbar {
-      flex-direction: column; /* Empilha os itens verticalmente */
-      padding: 20px; /* Aumenta o padding para dispositivos móveis */
+      padding: 10px; 
+      flex-direction: row; 
+      align-items: center; 
   }
 
-  .navbar .navlink,
-  .navbar .linknav {
-      padding: 5px; /* Reduz o padding dos links em telas pequenas */
+  .navbar .links-container {
+      flex-direction: row; 
+      width: auto; 
+      justify-content: flex-start; 
   }
+
+  .titulo {
+    font-size: 50px;
+    margin-left: 2px;
+    margin-bottom: -17px;
+    color: lightgray; 
+
+
 }
 
-/* Ajustes para telas médias (tablets) */
+  .navbar .navlink {
+    padding: 5px; 
+    margin-bottom: -20px;
+    margin-top: 20px;
+    
+
+  }
+  .navbar .linknav {
+      padding: 5px; 
+      margin-left: 70px;
+      margin-top: -14px;
+
+      
+  }
+
+
+}
+
 @media (min-width: 601px) and (max-width: 900px) {
   .navbar {
-      flex-direction: row; /* Mantém os itens em linha */
+      flex-direction: row; 
   }
 
   .navbar .navlink,
   .navbar .linknav {
-      padding: 8px; /* Ajusta o padding dos links para tablets */
+      padding: 8px; 
   }
 }
 
-/* Ajustes para telas grandes */
 @media (min-width: 901px) {
   .navbar {
-      padding: 10px; /* Padding padrão para telas grandes */
+      padding: 10px; 
+      font-size: 1rem;
+  }
+
+  .titulo {
+      font-size: 50px;
+      margin-left: -20px;
+
   }
 
   .navbar .navlink,
   .navbar .linknav {
-      padding: 10px; /* Padding padrão para links em telas grandes */
+      padding: 20px;
+      margin-left: -2px;
+      margin-bottom: -15px;
+
   }
 }

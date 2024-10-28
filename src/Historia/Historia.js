@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './Historia.module.css'; // Importando o arquivo CSS
+import styles from './Historia.module.css'; 
 
 const Historia = () => {
   useEffect(() => {
@@ -59,7 +59,11 @@ const Historia = () => {
     }
   ];
 
-  const TEMPO_LIMITADO = 59; // Tempo limite em segundos
+  const TEMPO_LIMITADO = 59; 
+
+  const embaralharArray = (array) => {
+    return array.sort(() => Math.random() - 0.5);
+  };
 
   const [perguntas, setPerguntas] = useState([]);
   const [indiceAtual, setIndiceAtual] = useState(0);
@@ -67,7 +71,8 @@ const Historia = () => {
   const [terminado, setTerminado] = useState(false);
   const [tempoRestante, setTempoRestante] = useState(TEMPO_LIMITADO);
   const [respostaSelecionada, setRespostaSelecionada] = useState("");
-  const [feedback, setFeedback] = useState(""); // Estado para o feedback da resposta
+  const [feedback, setFeedback] = useState(""); 
+  const [corFeedback, setCorFeedback] = useState(""); 
 
   useEffect(() => {
     setPerguntas(embaralharArray([...perguntasOriginais]));
@@ -86,14 +91,14 @@ const Historia = () => {
     }
   }, [tempoRestante, terminado]);
 
-  const embaralharArray = (array) => array.sort(() => Math.random() - 0.5);
-
   const handleRespostaClick = () => {
     if (respostaSelecionada === perguntas[indiceAtual]?.respostaCorreta) {
       setPontuacao(pontuacao + 1);
       setFeedback("Correto! 🎉");
+      setCorFeedback(styles.correta); 
     } else {
       setFeedback(`Errado! A resposta certa é: ${perguntas[indiceAtual]?.respostaCorreta}`);
+      setCorFeedback(styles.errada); 
     }
 
     setTimeout(() => {
@@ -102,11 +107,12 @@ const Historia = () => {
         setIndiceAtual(proximaPergunta);
         setRespostaSelecionada("");
         setFeedback("");
+        setCorFeedback(""); 
         setTempoRestante(TEMPO_LIMITADO);
       } else {
         setTerminado(true);
       }
-    }, 1000); // Delay de 1 segundo para mostrar o feedback
+    }, 2000); 
   };
 
   const reiniciarQuiz = () => {
@@ -116,8 +122,11 @@ const Historia = () => {
     setTerminado(false);
     setTempoRestante(TEMPO_LIMITADO);
     setRespostaSelecionada("");
-    setFeedback(""); // Limpa o feedback
+    setFeedback(""); 
+    setCorFeedback(""); 
   };
+
+  const progresso = Math.round(((indiceAtual + 1) / perguntas.length) * 100);
 
   return (
     <div className={styles.quiz_container}>
@@ -127,12 +136,22 @@ const Historia = () => {
           <h2>Você finalizou o quiz!</h2>
           <p>Sua pontuação: {pontuacao} de {perguntas.length}</p>
           <p>{pontuacao >= perguntas.length / 2 ? "Parabéns, você foi muito bem!" : "Continue praticando, você está indo bem!"}</p>
-          <button onClick={reiniciarQuiz} className={styles.button}>Reiniciar Quiz</button>
+          <button onClick={reiniciarQuiz}>Reiniciar Quiz</button>
         </div>
       ) : (
         <div>
           <h2 className={styles.pergunta}>{perguntas[indiceAtual]?.pergunta}</h2>
           <p>Tempo restante: {tempoRestante} segundos</p>
+          
+          <div className={styles.progresso_container}>
+            <div
+              className={styles.progresso_barra}
+              style={{ width: `${progresso}%` }}
+            >
+              {progresso}%
+            </div>
+          </div>
+
           <div className={styles.opcoes_container}>
             {perguntas[indiceAtual]?.opcoes.map((opcao, index) => (
               <div key={index} className={styles.opcao}>
@@ -147,7 +166,7 @@ const Historia = () => {
               </div>
             ))}
           </div>
-          {feedback && <p className={styles.feedback}>{feedback}</p>}
+          {feedback && <p className={`${styles.feedback} ${corFeedback}`}>{feedback}</p>}
           <button className={styles.button} onClick={handleRespostaClick} disabled={!respostaSelecionada}>
             Confirmar Resposta
           </button>
